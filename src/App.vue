@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Todolist v-bind:todos="todos" v-on:clearcomplete="deleteAllComplete" v-on:cleartasks="deleteAllTasks" v-on:deletetask="deleteTask" v-on:add-todo="addTodo"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Todolist from './components/todolist/Todolist';
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld
+    Todolist,
+  },
+  data() {
+    return {
+      todos: []
+    }
+  }, methods: {
+    addTodo(newTask) {
+      this.todos = [...this.todos, newTask];
+    },
+    deleteTask(id) {
+      this.todos = this.todos.filter(task => task.id !== id);
+    },
+    deleteAllTasks() {
+      this.todos = [];
+    },
+    deleteAllComplete() {
+      this.todos = this.todos.filter(task => !task.completed);
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
