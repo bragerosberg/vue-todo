@@ -1,24 +1,14 @@
-# vuetodo
+# Vue todo
 
-## Project setup
+## Try out the project
 ```
-npm install
+Clone repository
 ```
+```
+npm install "&&" npm run serve
+```
+Navigate to ``` http://localhost:8080/ ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## In progress
+The application is not complete, and there will be done changes. Once it's done and deployed, a website to use it live will be served. 
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
