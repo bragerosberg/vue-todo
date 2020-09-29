@@ -74,7 +74,6 @@ button:hover {
 .todo__form--input,
 .todo__form--button {
   padding: 1em;
-  width: 70%;
 }
 
 .todo__form--button {
@@ -91,6 +90,13 @@ button:hover {
   background: linear-gradient(to top, #ff416c, #ff4b2b);
   padding: 1em;
   color: white;
+}
+
+@media (max-width: 500px) {
+  .todo__form--input,
+  .todo__form--button {
+    width: 100%;
+  }
 }
 
 </style>
