@@ -7,6 +7,9 @@
         </li>
       </ul>
     </section>
+    <section v-if="!tasks.length > 0">
+      <p class="information">There are currently no tasks added, add one above to see it here</p>
+    </section>
 
   </div>
 </template>
@@ -34,6 +37,8 @@ export default {
 .todolist {
   padding: 0;
 }
-
+.information {
+  text-align: center;
+}
 
 </style>

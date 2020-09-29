@@ -1,11 +1,11 @@
 <template>
   <div v-bind:class="[task.completed ? 'completed' : 'pending', taskCard]">
-    <section v-if="!task.completed" v-on:click="toggleComplete">
+    <section class="task" v-if="!task.completed" v-on:click="toggleComplete">
       <p>{{ task.title }}</p>
     </section>
 
-    <section class="completed__wrapper" v-if="task.completed" v-on:click="toggleComplete">
-      <button class="btn" @click="$emit('deletetask', task.id)">X</button>
+    <section class="task" v-if="task.completed" v-on:click="toggleComplete">
+      <button class="task__delete" @click="$emit('deletetask', task.id)">X</button>
       <p>{{ task.title }}</p>
     </section>
   </div>
@@ -34,8 +34,13 @@ export default {
   color: white;
 }
 
-.btn {
+.task__delete {
   float: right;
+}
+
+.task p{
+  margin: 0;
+  padding: 1em;
 }
 
 .pending {

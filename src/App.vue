@@ -6,11 +6,11 @@
         <button class="todo__form--button" type="submit">Add Todo</button>
       </form>
       <aside class="todolist__buttons"> 
-        <button class="todolist__button" @click="$emit('cleartasks')">Clear List</button>
-        <button class="todolist__button" @click="$emit('clearcomplete')">Clear complete</button>
+        <button class="todolist__button" @click="deleteAllTasks">Clear List</button>
+        <button class="todolist__button" @click="deleteAllComplete">Clear complete</button>
       </aside>
     </article>
-    <Todolist v-bind:tasks="tasks" v-on:clearcomplete="deleteAllComplete" v-on:cleartasks="deleteAllTasks" v-on:deletetask="deleteTask"/>
+    <Todolist v-bind:tasks="tasks" v-on:deletetask="deleteTask"/>
   </div>
 </template>
 
