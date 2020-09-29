@@ -74,6 +74,7 @@ button:hover {
 .todo__form--input,
 .todo__form--button {
   padding: 1em;
+  width: 70%;
 }
 
 .todo__form--button {
