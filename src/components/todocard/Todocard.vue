@@ -4,9 +4,9 @@
       <p>{{ task.title }}</p>
     </section>
 
-    <section v-if="task.completed" v-on:click="toggleComplete">
+    <section class="completed__wrapper" v-if="task.completed" v-on:click="toggleComplete">
+      <button class="btn" @click="$emit('deletetask', task.id)">X</button>
       <p>{{ task.title }}</p>
-      <button @click="$emit('deletetask', task.id)">X</button>
     </section>
   </div>
 </template>
@@ -20,17 +20,26 @@ export default {
     toggleComplete() { this.task.completed = !this.task.completed}
   }
 }
-
 </script>
 
 <style scoped>
+.pending,
 .completed {
-  background-color: red;
-  color: white;
-  text-decoration: line-through;
+  border: 1px solid black;
+  margin-bottom: 1em;
 }
+
+.completed {
+  background-color: darkgray;
+  color: white;
+}
+
+.btn {
+  float: right;
+}
+
 .pending {
-  background-color: greenyellow;
+  background-color: gainsboro;
   color: black;
 }
 </style>

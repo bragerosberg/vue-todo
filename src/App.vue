@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <article>
+    <article class="app__header">
       <form class="todo__form" @submit="appendTask">
         <input class="todo__form--input" placeholder="Please write your task here" type="text" v-model="title" name="title">
         <button class="todo__form--button" type="submit">Add Todo</button>
       </form>
+      <aside class="todolist__buttons"> 
+        <button class="todolist__button" @click="$emit('cleartasks')">Clear List</button>
+        <button class="todolist__button" @click="$emit('clearcomplete')">Clear complete</button>
+      </aside>
     </article>
     <Todolist v-bind:tasks="tasks" v-on:clearcomplete="deleteAllComplete" v-on:cleartasks="deleteAllTasks" v-on:deletetask="deleteTask"/>
   </div>
@@ -53,9 +57,18 @@ export default {
 }
 </script>
 <style>
-.todo__form {
-  text-align: center;
-  background-color: azure;
+* {
+  font-family: 'Arial', sans-serif;
+  list-style-type: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.app__header {
+  display: flex;
+  justify-content: center;
 }
 
 .todo__form--input,
@@ -65,6 +78,17 @@ export default {
 
 .todo__form--button {
   background: linear-gradient(to left, #11998e, #38ef7d);
+  color: white;
+}
+
+.todolist__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.todolist__button {
+  background: linear-gradient(to top, #ff416c, #ff4b2b);
+  padding: 1em;
   color: white;
 }
 
