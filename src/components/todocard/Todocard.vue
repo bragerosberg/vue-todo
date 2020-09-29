@@ -1,23 +1,23 @@
 <template>
-  <div v-bind:class="[todo.completed ? 'completed' : 'pending', taskCard]">
-    <section v-if="!todo.completed" v-on:click="toggleComplete">
-      <p>{{ todo.title }}</p>
+  <div v-bind:class="[task.completed ? 'completed' : 'pending', taskCard]">
+    <section v-if="!task.completed" v-on:click="toggleComplete">
+      <p>{{ task.title }}</p>
     </section>
 
-    <section v-if="todo.completed" v-on:click="toggleComplete">
-      <p>{{ todo.title }}</p>
-      <button @click="$emit('deletetask', todo.id)">X</button>
+    <section v-if="task.completed" v-on:click="toggleComplete">
+      <p>{{ task.title }}</p>
+      <button @click="$emit('deletetask', task.id)">X</button>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Todocard',
+  name: 'todocard',
   props: [
-    "todo"
+    "task"
   ], methods: {
-    toggleComplete() { this.todo.completed = !this.todo.completed}
+    toggleComplete() { this.task.completed = !this.task.completed}
   }
 }
 
