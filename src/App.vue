@@ -17,7 +17,11 @@
 <script>
 import { uuid } from 'uuidv4';
 import Todolist from './components/todolist/Todolist';
+let getStoredTodo = null;
 export default {
+  updated() {
+    localStorage.setItem('todoStorage', JSON.stringify(this.tasks));
+  },
   name: 'app',
   components: {
     Todolist,
@@ -27,7 +31,14 @@ export default {
       tasks: [],
       title: '',
     }
-  }, methods: {
+  }, 
+  beforeCreate() {
+    getStoredTodo = localStorage.getItem('todoStorage');
+  },
+  created() {
+    if(getStoredTodo !== null) {this.tasks = JSON.parse(getStoredTodo)}
+  },
+  methods: {
     addTodo(newTask) {
       this.tasks = [...this.tasks, newTask];
     },
