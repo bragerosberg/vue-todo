@@ -8,7 +8,7 @@
       </ul>
     </section>
     <section v-if="!tasks.length > 0">
-      <p class="information">There are currently no tasks added, add one above to see it here</p>
+      <p class="information">There are currently no tasks added, type a task to see it above.</p>
     </section>
 
   </div>
