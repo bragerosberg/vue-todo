@@ -1,8 +1,7 @@
 # Vue todo
-
-## Try out the project
 Hosted: https://todovueapplication.herokuapp.com/
-Locally: 
+
+## Local 
 ```
 Clone repository
 ```
