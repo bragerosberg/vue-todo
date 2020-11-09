@@ -1,7 +1,7 @@
 # Vue todo
 
 ## Try out the project
-Hosted: todovueapplication.herokuapp.com/
+Hosted: https://todovueapplication.herokuapp.com/
 Locally: 
 ```
 Clone repository
