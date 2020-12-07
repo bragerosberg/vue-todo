@@ -1,14 +1,11 @@
 # Vue todo
+A classic to-do application, letting you set tasks (todos), set them as complete, delete single task, delete all complete task, delete all tasks. 
 Hosted: https://todovueapplication.herokuapp.com/
 
-## Local 
-```
-Clone repository
-```
-```
-npm install "&&" npm run serve
-```
-Navigate to ``` http://localhost:8080/ ```
+## Test Locally
+- Clone repository, navigate to correct folder
+- Type ``` npm install "&&" npm run serve ``` in the terminal
+- See it live on ``` http://localhost:8080/ ```
 
 ### Get in touch with me:
 [<img align="left" style="margin-left: 10px;" alt="codeSTACKr | LinkedIn" width="40px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
